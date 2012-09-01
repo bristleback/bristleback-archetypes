@@ -1,0 +1,20 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.action;
+
+import org.springframework.stereotype.Component;
+import pl.bristleback.server.bristle.api.action.SendCondition;
+import pl.bristleback.server.bristle.api.annotations.ClientAction;
+import pl.bristleback.server.bristle.api.annotations.ClientActionClass;
+import pl.bristleback.server.bristle.authorisation.conditions.AllUsersCondition;
+
+@ClientActionClass
+@Component
+public class SampleClientAction {
+
+  @ClientAction
+  public SendCondition sayHello(String helloWorld) {
+    return AllUsersCondition.getInstance();
+  }
+}
