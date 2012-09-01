@@ -70,8 +70,8 @@
       helloWorld.sayHelloToAll();
     }
 
-    function duplicateCallback(reversedValue) {
-      ${symbol_dollar}('${symbol_pound}status').text("Reversed value: " + reversedValue);
+    function duplicateCallback(duplicatedValue) {
+      ${symbol_dollar}('${symbol_pound}status').text("Duplicated value: " + duplicatedValue);
     }
 
     function emptyInputCallback() {
