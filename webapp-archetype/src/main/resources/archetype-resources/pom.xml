@@ -12,7 +12,7 @@
     <dependency>
       <groupId>pl.bristleback</groupId>
       <artifactId>bristleServer</artifactId>
-      <version>0.2.0-alpha-02</version>
+      <version>0.2.0-alpha-03</version>
     </dependency>
 
     <dependency>
