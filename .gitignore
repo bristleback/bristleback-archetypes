@@ -3,4 +3,4 @@
 *.iml
 *.ipr
 *.iws
-target/*
+webapp-archetype/target/*
