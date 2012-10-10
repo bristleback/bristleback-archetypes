@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import pl.bristleback.server.bristle.api.action.DefaultAction;
 import pl.bristleback.server.bristle.api.annotations.Action;
-import pl.bristleback.server.bristle.api.annotations.AnnotatedActionClass;
+import pl.bristleback.server.bristle.api.annotations.ActionClass;
 import pl.bristleback.server.bristle.api.annotations.Bind;
 import pl.bristleback.server.bristle.engine.base.users.DefaultUser;
 
-@AnnotatedActionClass(name = "HelloWorld")
+@ActionClass(name = "HelloWorld")
 @Controller
 public class HelloWorldAction implements DefaultAction<DefaultUser, String> {
 
