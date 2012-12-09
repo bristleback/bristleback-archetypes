@@ -3,17 +3,16 @@
 #set( $symbol_escape = '\' )
 <html>
 <head>
-  <script type="text/javascript" src="./js/jquery-1.5.1.min.js"><!--//--></script>
-  <script type="text/javascript" src="js/bristleback-0.2.0.js"><!--//--></script>
+  <script type="text/javascript" src="js/bristleback-0.2.1.js"><!--//--></script>
 
   <script type="text/javascript">
     var config = {
       serverUrl: "ws://localhost:8080/websocket",
       OnOpen: function(event) {
-        ${symbol_dollar}('${symbol_pound}status').text("The WebSocket Connection Is Open.");
+        document.getElementById('status').innerHTML = "The WebSocket Connection Is Open.";
       },
       OnClose: function(event) {
-        ${symbol_dollar}('${symbol_pound}status').text("The WebSocket Connection Is Closed.");
+        document.getElementById('status').innerHTML = "The WebSocket Connection Is Closed.";
       }
     };
     var client = Bristleback.newClient(config);
@@ -58,7 +57,7 @@
     }
 
     function reverseCallback(reversedValue) {
-      ${symbol_dollar}('${symbol_pound}status').text("Reversed value: " + reversedValue);
+      document.getElementById('status').innerHTML = "Reversed value: " + reversedValue;
     }
 
     function duplicate() {
@@ -71,11 +70,11 @@
     }
 
     function duplicateCallback(duplicatedValue) {
-      ${symbol_dollar}('${symbol_pound}status').text("Duplicated value: " + duplicatedValue);
+      document.getElementById('status').innerHTML = "Duplicated value: " + duplicatedValue;
     }
 
     function emptyInputCallback() {
-      ${symbol_dollar}('${symbol_pound}status').text("This is an exception callback for SerializationException!");
+      document.getElementById('status').innerHTML = "This is an exception callback for SerializationException!";
     }
 
 
