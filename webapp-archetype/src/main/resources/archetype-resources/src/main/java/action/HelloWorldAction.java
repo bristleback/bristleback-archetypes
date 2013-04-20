@@ -25,7 +25,7 @@ public class HelloWorldAction implements DefaultAction<BaseUserContext, String> 
 
   @Action
   public String duplicateText(@Bind(required = true) String text) {
-    return new StringBuilder(text).append(text).toString();
+    return text + text;
   }
 
   @Action
