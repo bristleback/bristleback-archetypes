@@ -8,18 +8,18 @@ import org.springframework.stereotype.Controller;
 import pl.bristleback.server.bristle.api.action.DefaultAction;
 import pl.bristleback.server.bristle.api.annotations.Action;
 import pl.bristleback.server.bristle.api.annotations.ActionClass;
-import pl.bristleback.server.bristle.api.annotations.Bind;
-import pl.bristleback.server.bristle.engine.base.users.DefaultUser;
+import pl.bristleback.server.bristle.engine.user.BaseUserContext;
+import pl.bristleback.server.bristle.serialization.system.annotation.Bind;
 
 @ActionClass(name = "HelloWorld")
 @Controller
-public class HelloWorldAction implements DefaultAction<DefaultUser, String> {
+public class HelloWorldAction implements DefaultAction<BaseUserContext, String> {
 
   @Autowired
   private SampleClientAction sampleClientAction;
 
   @Action
-  public String executeDefault(DefaultUser defaultUser, @Bind(required = true) String text) {
+  public String executeDefault(BaseUserContext defaultUser, @Bind(required = true) String text) {
     return new StringBuilder(text).reverse().toString();
   }
 
