@@ -30,7 +30,7 @@
     }
 
     function closeConnection() {
-      client.disconnect("exit on demand");
+      client.disconnect();
     }
 
     /* ---------- CLIENT ACTIONS ---------- */
