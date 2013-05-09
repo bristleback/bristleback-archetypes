@@ -8,10 +8,10 @@
   <script type="text/javascript">
     var config = {
       serverUrl: "ws://localhost:8080/websocket",
-      OnOpen: function(event) {
+      onOpen: function(event) {
         document.getElementById('status').innerHTML = "The WebSocket Connection Is Open.";
       },
-      OnClose: function(event) {
+      onClose: function(event) {
         document.getElementById('status').innerHTML = "The WebSocket Connection Is Closed.";
       }
     };
