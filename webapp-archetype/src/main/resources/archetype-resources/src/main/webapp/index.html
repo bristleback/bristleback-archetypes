@@ -3,15 +3,15 @@
 #set( $symbol_escape = '\' )
 <html>
 <head>
-  <script type="text/javascript" src="js/bristleback-0.2.1.js"><!--//--></script>
+  <script type="text/javascript" src="js/bristleback-0.3.0.js"><!--//--></script>
 
   <script type="text/javascript">
     var config = {
       serverUrl: "ws://localhost:8080/websocket",
-      OnOpen: function(event) {
+      onOpen: function(event) {
         document.getElementById('status').innerHTML = "The WebSocket Connection Is Open.";
       },
-      OnClose: function(event) {
+      onClose: function(event) {
         document.getElementById('status').innerHTML = "The WebSocket Connection Is Closed.";
       }
     };
@@ -30,7 +30,7 @@
     }
 
     function closeConnection() {
-      client.disconnect("exit on demand");
+      client.disconnect();
     }
 
     /* ---------- CLIENT ACTIONS ---------- */
@@ -53,7 +53,7 @@
 
     function reverse() {
       var text = document.getElementById("textInput").value;
-      helloWorld.executeDefault(Bristleback.CONNECTOR, text);
+      helloWorld.executeDefault(Bristleback.USER_CONTEXT, text);
     }
 
     function reverseCallback(reversedValue) {
